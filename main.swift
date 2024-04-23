@@ -9,7 +9,7 @@ class Metar {
     enum MetarError: Error{
         case fieldCountMismatch(expectedFieldCount: Int, actualFieldCount: Int, fields : [String])
     }
-    
+
     let rawText: String
     let stationId: String
     let observationTime: String
@@ -99,50 +99,50 @@ class Metar {
     vertVisFt: String,
     metarType: String,
     elevationM: String) {
-        self.rawText = rawText 
-        self.stationId = stationId 
-        self.observationTime = observationTime 
-        self.latitude = latitude 
-        self.longitude = longitude 
-        self.tempC = tempC 
-        self.dewpointC = dewpointC 
-        self.windDirDegrees = windDirDegrees 
-        self.windSpeedKt = windSpeedKt 
-        self.windGustKt = windGustKt 
-        self.visibilityStatuteMi = visibilityStatuteMi 
-        self.altimInHg = altimInHg 
-        self.seaLevelPressureMb = seaLevelPressureMb 
-        self.corrected = corrected 
-        self.auto = auto 
-        self.autoStation = autoStation 
-        self.maintenanceIndicatorOn = maintenanceIndicatorOn 
-        self.noSignal = noSignal 
-        self.lightningSensorOff = lightningSensorOff 
-        self.freezingRainSensorOff = freezingRainSensorOff 
-        self.presentWeatherSensorOff = presentWeatherSensorOff 
-        self.wxString = wxString 
-        self.skyCover_1 = skyCover_1 
-        self.cloudBaseFtAgl_1 = cloudBaseFtAgl_1 
-        self.skyCover_2 = skyCover_2 
-        self.cloudBaseFtAgl_2 = cloudBaseFtAgl_2 
-        self.skyCover_3 = skyCover_3 
-        self.cloudBaseFtAgl_3 = cloudBaseFtAgl_3 
-        self.skyCover_4 = skyCover_4 
-        self.cloudBaseFtAgl_4 = cloudBaseFtAgl_4 
-        self.flightCategory = flightCategory 
-        self.threeHrPressureTendencyMb = threeHrPressureTendencyMb 
-        self.maxTC = maxTC 
-        self.minTC = minTC 
-        self.maxT24hrC = maxT24hrC 
-        self.minT24hrC = minT24hrC 
-        self.precipIn = precipIn 
-        self.pcp3hrIn = pcp3hrIn 
-        self.pcp6hrIn = pcp6hrIn 
-        self.pcp24hrIn = pcp24hrIn 
-        self.snowIn = snowIn 
-        self.vertVisFt = vertVisFt 
-        self.metarType = metarType 
-        self.elevationM = elevationM 
+        self.rawText = rawText
+        self.stationId = stationId
+        self.observationTime = observationTime
+        self.latitude = latitude
+        self.longitude = longitude
+        self.tempC = tempC
+        self.dewpointC = dewpointC
+        self.windDirDegrees = windDirDegrees
+        self.windSpeedKt = windSpeedKt
+        self.windGustKt = windGustKt
+        self.visibilityStatuteMi = visibilityStatuteMi
+        self.altimInHg = altimInHg
+        self.seaLevelPressureMb = seaLevelPressureMb
+        self.corrected = corrected
+        self.auto = auto
+        self.autoStation = autoStation
+        self.maintenanceIndicatorOn = maintenanceIndicatorOn
+        self.noSignal = noSignal
+        self.lightningSensorOff = lightningSensorOff
+        self.freezingRainSensorOff = freezingRainSensorOff
+        self.presentWeatherSensorOff = presentWeatherSensorOff
+        self.wxString = wxString
+        self.skyCover_1 = skyCover_1
+        self.cloudBaseFtAgl_1 = cloudBaseFtAgl_1
+        self.skyCover_2 = skyCover_2
+        self.cloudBaseFtAgl_2 = cloudBaseFtAgl_2
+        self.skyCover_3 = skyCover_3
+        self.cloudBaseFtAgl_3 = cloudBaseFtAgl_3
+        self.skyCover_4 = skyCover_4
+        self.cloudBaseFtAgl_4 = cloudBaseFtAgl_4
+        self.flightCategory = flightCategory
+        self.threeHrPressureTendencyMb = threeHrPressureTendencyMb
+        self.maxTC = maxTC
+        self.minTC = minTC
+        self.maxT24hrC = maxT24hrC
+        self.minT24hrC = minT24hrC
+        self.precipIn = precipIn
+        self.pcp3hrIn = pcp3hrIn
+        self.pcp6hrIn = pcp6hrIn
+        self.pcp24hrIn = pcp24hrIn
+        self.snowIn = snowIn
+        self.vertVisFt = vertVisFt
+        self.metarType = metarType
+        self.elevationM = elevationM
 
     }
 
@@ -208,7 +208,7 @@ convenience init(line: String) throws {
 class Metars{
 
     fund read(){
-        let urlString = 
+        let urlString =
     }
 }
 
@@ -218,3 +218,4 @@ func main(){
         fputs("\(ansiRed)Error: \(error)\(ansiNormal)\n", stderr)
     }
 }
+//Fortnite
