@@ -218,4 +218,3 @@ func main(){
         fputs("\(ansiRed)Error: \(error)\(ansiNormal)\n", stderr)
     }
 }
-//Fortnite
