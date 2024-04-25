@@ -236,8 +236,8 @@ class Metars{
                 continue
             }
             let metars = try Metar(line: line)
-            stations[metar.stationId] = metar
-            dump(metar)
+            stations[metar.stationId] = metars
+            dump(metars)
         }
 
         return stations
