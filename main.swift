@@ -212,7 +212,7 @@ class Metars{
         case invalidURL(urlString: String)
         case noDataInFile
     }
-    typealias Stations = Dictionary<String, Metar>()
+    typealias Stations = Dictionary<String, Metar>
     let stations : Stations
     init() throws {
         stations = try Self.read()
@@ -225,7 +225,7 @@ class Metars{
         let contents = try String(contentsOf: url)
         let lines = contents.components(separatedBy:"\n")
         guard lines.count >= 7 else {
-            throw.MetarsError.noDataInFile
+            throw MetarsError.noDataInFile
         }
 
         var stations = Stations()
@@ -236,7 +236,7 @@ class Metars{
                 continue
             }
             let metars = try Metar(line: line)
-            stations[metar.stationId] = metars
+            stations[metars.stationId] = metars
             dump(metars)
         }
 
