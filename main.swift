@@ -207,14 +207,48 @@ convenience init(line: String) throws {
 
 class Metars{
 
-    func read(){
-        let urlString =
+    enum MetarsError: Error {
+        case invalidURL(urlString: String)
+        case noDataInFile
+    }
+    typealias Stations = Dictionary<String, Metar>()
+    let stations : Stations
+    init() throws {
+        stations = try Self.read()
+    }
+    private static func read() throws -> Stations {
+        let urlString = "https://codermerlin.academy/wiki/images/1/15/Example-metars.csv"
+        guard let url = URL(string: urlString) else{
+            throw MetarsError.invalidURL(urlString: urlString)
+        }
+        let contents = try String(contentsOf: url)
+        let lines = contents.components(separatedBy:"\n")
+        guard lines.count >= 7 else {
+            throw.MetarsError.noDataInFile
+        }
+
+        var stations = Stations()
+        for lineIndex in 6..<lines.count {
+            let line = lines[lineIndex]
+            guard line.trimmingCharacters(in: .whitespaces).count > 0 else {
+                print("Skipping blank line")
+                continue
+            }
+            let metar = try Metar(line: line)
+            stations[metar.stationId] = metar
+            dump(metar)
+        }
+
+        return stations
     }
 }
 
 func main(){
-    do{
+    do {
+        let metar = try Metars()
     } catch {
         fputs("\(ansiRed)Error: \(error)\(ansiNormal)\n", stderr)
     }
 }
+
+main()
