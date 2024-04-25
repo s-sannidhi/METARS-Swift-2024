@@ -199,10 +199,11 @@ class Metar {
         )
 
     }
-}
-convenience init(line: String) throws {
-    let fields = line.components(separatedBy: ",")
-    try self.init(fields: fields)
+    convenience init(line: String) throws {
+        let fields = line.components(separatedBy: ",")
+        try self.init(fields: fields)
+    }
+
 }
 
 class Metars{
