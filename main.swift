@@ -207,7 +207,7 @@ convenience init(line: String) throws {
 
 class Metars{
 
-    fund read(){
+    func read(){
         let urlString =
     }
 }
