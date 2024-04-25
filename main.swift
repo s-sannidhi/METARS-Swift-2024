@@ -234,7 +234,7 @@ class Metars{
                 print("Skipping blank line")
                 continue
             }
-            let metar = try Metar(line: line)
+            let metars = try Metar(line: line)
             stations[metar.stationId] = metar
             dump(metar)
         }
@@ -245,7 +245,7 @@ class Metars{
 
 func main(){
     do {
-        let metar = try Metars()
+        let metars = try Metars()
     } catch {
         fputs("\(ansiRed)Error: \(error)\(ansiNormal)\n", stderr)
     }
